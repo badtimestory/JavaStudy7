@@ -14,10 +14,10 @@ public class ContactsMenu {
 	
 	public void select() {
 		Scanner sc = new Scanner(System.in);
-		boolean check = true;
 		ContactsService cs = new ContactsService();
 		ContactsView cv = new ContactsView();
 		ArrayList<ContactsDTO> ar = new ArrayList<>();
+		boolean check = true;
 	
 		while (check) {
 			System.out.println("1. 전체 출력");
@@ -33,16 +33,20 @@ public class ContactsMenu {
 				ContactsDTO cDTO = cs.searchContacts(ar);
 				cv.View(cDTO);
 			} else if (select == 3) {
-				ContactsDTO cDto = cs.addContacts();
-				ar.add(cDto);
+				ContactsDTO cDTO = cs.addContacts();
+				ar.add(cDTO);
 				System.out.println(ar);
 			} else if (select == 4) {
-				System.out.println("4번");
+				boolean flag = cs.removeContacts(ar);
+				if(flag) {
+					System.out.println("성공");
+				} else 
+					System.out.println("실패");
 			} else {
 				System.out.println("finish");
 				break;
 			}			
-		}
+		}	// end of while
 	}
 	
 //	public static void main(String[] args) {
