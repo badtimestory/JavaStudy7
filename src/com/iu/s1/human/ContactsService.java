@@ -4,12 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class ContactsService {
 	
 	private Scanner sc;
 	
 	public ContactsService() {
 		sc = new Scanner(System.in);
+	}
+	
+	// 이름을 입력받아서 같은 이름이 있는 ContactsDTO의 인덱스 번호 찾기
+	// 찾아서 삭제
+	// 리턴 삭제여부	0: 성공, 1: 실패
+	public boolean removeContacts(List<ContactsDTO> ar) {
+		System.out.print("삭제할 이름을 입력하세요: ");
+		String name = sc.next();
+		
+		boolean result = false;
+		
+		ContactsDTO cDTO = null;
+		
+		for (int i = 0; i < ar.size(); i++) {
+			if(name.equals(ar.get(i).getName())) {
+				
+				cDTO = ar.get(i);
+				
+				//result = ar.remove(ar.get(i));
+				
+				// cDTO = ar.remove(i);
+				// result = true;
+				break;
+			}
+		}
+		return ar.remove(cDTO);
 	}
 
 	// 이름을 입력받아서 같은 이름이 있는 ContactsDTO 찾아서 리턴
