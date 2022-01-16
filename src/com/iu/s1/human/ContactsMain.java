@@ -8,10 +8,10 @@ public class ContactsMain {
 		ContactsMenu cm = new ContactsMenu();
 		cm.select();
 		
-		ArrayList<Integer> ar = new ArrayList<>();
-		ArrayList<Integer> ar2 = new ArrayList<>();
-		
-		HashMap<String, ArrayList<Integer>> map = new HashMap<String, ArrayList<Integer>>();
+//		ArrayList<Integer> ar = new ArrayList<>();
+//		ArrayList<Integer> ar2 = new ArrayList<>();
+//		
+//		HashMap<String, ArrayList<Integer>> map = new HashMap<String, ArrayList<Integer>>();
 		
 	}
 

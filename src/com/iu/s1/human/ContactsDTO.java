@@ -1,12 +1,14 @@
 package com.iu.s1.human;
 
+import java.util.Calendar;
+
 public class ContactsDTO {
 
 	private String name;		// 이름
 	private String nickName;	// 별명
 	private String email;		// 이메일
 	private String phoneNum;	// 전화번호
-	private String birth;		// 생일
+	private Calendar birth;		// 생일
 	
 	public String getName() {
 		return name;
@@ -32,12 +34,13 @@ public class ContactsDTO {
 	public void setPhoneNum(String phoneNum) {
 		this.phoneNum = phoneNum;
 	}
-	public String getBirth() {
+	public Calendar getBirth() {
 		return birth;
 	}
-	public void setBirth(String birth) {
+	public void setBirth(Calendar birth) {
 		this.birth = birth;
 	}
+
 	
 	
 }

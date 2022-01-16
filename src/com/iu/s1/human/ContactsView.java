@@ -5,7 +5,7 @@ import java.util.List;
 /*
  * 
  * 주소록에 있는 모든 view를 출력
- * @ 22.01.04
+ * @ 22.01.14
  * 
  * 
  * */
@@ -22,6 +22,8 @@ public class ContactsView {
 			System.out.println("이메일: " + cDTO.getEmail());
 			System.out.println("전화번호: " + cDTO.getPhoneNum());
 			System.out.println("생일: " + cDTO.getBirth());
+			// 2000년 12월 24일 (수)
+			String patten = "YYYY년 mm월 dd일 (E)";
 		} else {
 			System.out.println("정보가 없습니다.");
 		}

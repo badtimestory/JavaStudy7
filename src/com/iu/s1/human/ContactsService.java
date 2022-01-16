@@ -1,6 +1,7 @@
 package com.iu.s1.human;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
@@ -91,7 +92,17 @@ public class ContactsService {
 		System.out.print("전화번호를 입력해주세요: ");
 		cDto.setPhoneNum(sc.next());
 		System.out.println("생일을 입력해주세요: ");
-		cDto.setBirth(sc.next());
+		String birth = sc.next();	// 20001224
+		int year = Integer.parseInt(birth.substring(0, 4));
+		int month = Integer.parseInt(birth.substring(4, 6));
+		int day = Integer.parseInt(birth.substring(6));
+		
+		//Calendar
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(year, month-1, day, 0, 0, 0);
+		
+		
+		//cDto.setBirth(Calendar.getInstance());
 		
 		return cDto;
 	}
